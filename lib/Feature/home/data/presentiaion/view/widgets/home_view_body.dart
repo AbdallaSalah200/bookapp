@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
             height: 50,
           ),
           //        Padding(padding: EdgeInsets.symmetric(horizontal :16),child: Text('Popular Books',style: TextStyle(color: Colors
-          Text('Best Saller ',style: Styles.style,),
+          Text('Best Saller ',style: Styles.textStyle18,),
           BestSllerListViewItem()
          ],
       ),
