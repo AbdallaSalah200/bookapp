@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:e_book_app/constant.dart';
 import '../../../../../../core/utils/assets.dart';
 import 'package:e_book_app/core/utils/styles.dart';
+import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 
 
 class BestSllerListViewItem extends StatelessWidget {
@@ -28,33 +29,55 @@ class BestSllerListViewItem extends StatelessWidget {
     const   SizedBox(
         width:30
       ),
-     Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-       SizedBox(
-        width: MediaQuery.of(context).size.width*.5,
-         child:  Text('Harry potter  and the goblet of the fire ',
-         style: Styles.textStyle20.copyWith(fontFamily: kFont),
-         maxLines: 2,
-         overflow: TextOverflow.ellipsis,),
-       ),
-       const SizedBox(
-        height: 3,
-       ),
-     const   Text('Jk.Rowling',style: Styles.textStyle14,),
-     const SizedBox(
-        height: 3,
-       ),
-      Row(
+     Expanded(
+       child: Column(
+         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('19.99E',style:Styles.textStyle20.copyWith(fontWeight: FontWeight.bold) ,)
-        ]
-        ,
-      )
-      ],
+         SizedBox(
+          width: MediaQuery.of(context).size.width*.5,
+           child:  Text('Harry potter  and the goblet of the fire ',
+           style: Styles.textStyle20.copyWith(fontFamily: kFont),
+           maxLines: 2,
+           overflow: TextOverflow.ellipsis,),
+         ),
+         const SizedBox(
+          height: 3,
+         ),
+       const   Text('Jk.Rowling',style: Styles.textStyle14,),
+       const SizedBox(
+          height: 3,
+         ),
+        Row(
+          children: [
+            Text('19.99E',style:Styles.textStyle20.copyWith(fontWeight: FontWeight.bold) ,),
+         const    Spacer(),
+          const   BookRating()
+          ]
+          ,
+        )
+        ],
+       ),
      )
       ],
       ),
     );
+  }
+}
+class BookRating  extends StatelessWidget {
+  const BookRating ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+     const  Icon (FontAwesomeIcons.solidStar,color: Color(0XffFFDD4F),),
+     const   SizedBox(
+        width: 6.3,
+      ),
+  const     Text('4.8',style: Styles.textStyle16,),
+    const      SizedBox(
+        width: 6.3,
+      ),
+      Text('235',style: Styles.textStyle14.copyWith(color: const Color(0xff707070)),)
+    ],);
   }
 }
