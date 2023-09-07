@@ -4,6 +4,7 @@ import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_acti
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_rating.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_button.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_book_title.dart';
+import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/simialr_book_list_view.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_app_bar_book_details.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -12,7 +13,10 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width =MediaQuery.of(context).size.width ;
-    return  Padding(
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          child: Padding(
       padding: const   EdgeInsets.symmetric(horizontal: 30),
       child:   Column(
        children: [
@@ -57,25 +61,11 @@ class BookDetailsViewBody extends StatelessWidget {
        )
        ],
       ),
+    ),
+        )
+      ],
     );
+   
   }
 }
-class SimialrBookListView extends StatelessWidget {
-  const SimialrBookListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-       height: MediaQuery.of(context).size.height*.15,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context,index){
-          return const  Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 5),
-            child:    CustomBookImage(),
-          );
-        },
-      ),
-    );
-  }
-}
