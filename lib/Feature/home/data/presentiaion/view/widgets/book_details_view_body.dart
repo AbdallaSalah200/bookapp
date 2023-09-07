@@ -42,8 +42,39 @@ class BookDetailsViewBody extends StatelessWidget {
         const SizedBox(
           height:18
         ),
-        const  BookAction()
+        const  BookAction(),
+        const SizedBox(
+          height: 50,
+
+        ),
+     const   Align(
+        alignment: Alignment.bottomCenter,
+        child: Text('you can also like ',style: Styles.textStyle16,)),
+        const    SizedBox(height: 16,),
+       const  SimialrBookListView(),
+       const SizedBox(
+        height:40
+       )
        ],
+      ),
+    );
+  }
+}
+class SimialrBookListView extends StatelessWidget {
+  const SimialrBookListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+       height: MediaQuery.of(context).size.height*.15,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context,index){
+          return const  Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 5),
+            child:    CustomBookImage(),
+          );
+        },
       ),
     );
   }
