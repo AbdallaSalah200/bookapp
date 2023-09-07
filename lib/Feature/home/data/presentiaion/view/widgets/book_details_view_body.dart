@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:e_book_app/core/utils/styles.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_book_title.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -13,11 +14,19 @@ class BookDetailsViewBody extends StatelessWidget {
        children: [
       const   SafeArea(child: CustomBookdeatialsAppBar()),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width*.17),
+          padding: EdgeInsets.symmetric(horizontal: width*.2),
           child: const  CustomBookImage(),
         ),
-        
-    
+        const SizedBox(
+          height: 43,
+        ),
+ Text('The jungle book',style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
+    const SizedBox(
+          height: 6,
+        ),
+       Opacity(
+        opacity: .7,
+        child: Text('Rudyard kipling ',style: Styles.textStyle18.copyWith(fontStyle: FontStyle.italic,fontWeight: FontWeight.w500),)),
        ],
       ),
     );
