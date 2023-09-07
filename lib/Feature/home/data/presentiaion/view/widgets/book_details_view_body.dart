@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:e_book_app/core/utils/styles.dart';
+import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_action.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_rating.dart';
+import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_button.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_book_title.dart';
+import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_app_bar_book_details.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -35,23 +38,13 @@ class BookDetailsViewBody extends StatelessWidget {
         ),
        const  BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
-        )
+        ),
+        const SizedBox(
+          height:18
+        ),
+        const  BookAction()
        ],
       ),
-    );
-  }
-}
-class CustomBookdeatialsAppBar extends StatelessWidget {
-  const CustomBookdeatialsAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(onPressed: (){}, icon:const  Icon(Icons.close)),
-         IconButton(onPressed: (){}, icon:const  Icon(Icons.shopping_cart_outlined)),
-      ],
     );
   }
 }
