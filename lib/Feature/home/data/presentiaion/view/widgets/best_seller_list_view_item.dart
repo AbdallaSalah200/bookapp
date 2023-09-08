@@ -8,8 +8,8 @@ import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_rating.dart';
 
 
-class BestSllerListViewItem extends StatelessWidget {
-  const BestSllerListViewItem({super.key});
+class CustomListView extends StatelessWidget {
+  const CustomListView({super.key});
 
   @override
   Widget build(BuildContext context) {

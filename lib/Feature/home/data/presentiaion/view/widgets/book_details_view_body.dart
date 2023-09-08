@@ -4,6 +4,8 @@ import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_acti
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_rating.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_button.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_book_title.dart';
+import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/similar_book_deatils.dart';
+import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_deatils_section.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/simialr_book_list_view.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/custom_app_bar_book_details.dart';
 
@@ -12,53 +14,18 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width =MediaQuery.of(context).size.width ;
-    return CustomScrollView(
+ 
+    return const  CustomScrollView(
       slivers: [
         SliverFillRemaining(
           child: Padding(
-      padding: const   EdgeInsets.symmetric(horizontal: 30),
+      padding:    EdgeInsets.symmetric(horizontal: 30),
       child:   Column(
        children: [
-      const   SafeArea(child: CustomBookdeatialsAppBar()),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: width*.2),
-          child: const  CustomBookImage(),
-        ),
-        const SizedBox(
-          height: 43,
-        ),
- Text('The jungle book',style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
-    const SizedBox(
-          height: 6,
-        ),
-       Opacity(
-        opacity: .7,
-        child: Text('Rudyard kipling ',
-        style: Styles.textStyle18.copyWith(fontStyle: FontStyle.italic,fontWeight: FontWeight.w500),
-        ),),
-        const SizedBox(
-          height: 18,
-        ),
-       const  BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-        const SizedBox(
-          height:18
-        ),
-        const  BookAction(),
-        const SizedBox(
-          height: 50,
-
-        ),
-     const   Align(
-        alignment: Alignment.bottomCenter,
-        child: Text('you can also like ',style: Styles.textStyle16,)),
-        const    SizedBox(height: 16,),
-       const  SimialrBookListView(),
-       const SizedBox(
-        height:40
-       )
+         SafeArea(child: CustomBookdeatialsAppBar()),
+       BookDeatilsSection(),
+       SimialrBookDeatils(),
+  
        ],
       ),
     ),
@@ -68,4 +35,5 @@ class BookDetailsViewBody extends StatelessWidget {
    
   }
 }
+
 
