@@ -13,7 +13,9 @@ class SimialrBookListView extends StatelessWidget {
         itemBuilder: (context,index){
           return const  Padding(
             padding:  EdgeInsets.symmetric(horizontal: 5),
-            child:    CustomBookImage(),
+            child:    CustomBookImage(
+              imageurl: 'https://media.istockphoto.com/id/472340869/vector/app-icons-collection.jpg?s=612x612&w=0&k=20&c=fiaW0nq5lnynteWxKEYTExkglUJuC4LuDj_6IU9DbfM=',
+            ),
           );
         },
       ),
