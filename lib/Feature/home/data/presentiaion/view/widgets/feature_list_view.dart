@@ -23,7 +23,7 @@ class FeatureListView extends StatelessWidget {
       return   Padding(
         padding: const  EdgeInsets.all(8.0),
         child:    CustomBookImage(
-          imageurl: state.books[index].volumeInfo.imageLinks.thumbnail,
+          imageurl: state.books[index].volumeInfo.imageLinks!.smallThumbnail ,
         ),
       );
     },
