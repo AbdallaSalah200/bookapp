@@ -1,14 +1,16 @@
 import './custom_book_title.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../core/utils/styles.dart';
+import 'package:e_book_app/Feature/home/data/models/book_model/book_model.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_action.dart';
 import 'package:e_book_app/Feature/home/data/presentiaion/view/widgets/book_rating.dart';
 
 
 
-class BookDeatilsSection extends StatelessWidget {
-  const BookDeatilsSection({super.key});
 
+class BookDeatilsSection extends StatelessWidget {
+  const BookDeatilsSection({super.key, required this.book});
+final BookModel book;
   @override
   Widget build(BuildContext context) {
        var width =MediaQuery.of(context).size.width ;
@@ -16,28 +18,28 @@ class BookDeatilsSection extends StatelessWidget {
       children: [
          Padding(
           padding: EdgeInsets.symmetric(horizontal: width*.2),
-          child:   const  CustomBookImage(
-            imageurl: 'https://media.istockphoto.com/id/472340869/vector/app-icons-collection.jpg?s=612x612&w=0&k=20&c=fiaW0nq5lnynteWxKEYTExkglUJuC4LuDj_6IU9DbfM=',
+          child:     CustomBookImage(
+            imageurl: book.volumeInfo.imageLinks?.thumbnail??'',
           ),
         ),
         const SizedBox(
           height: 43,
         ),
- Text('The jungle book',style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),),
+ Text(book.volumeInfo.title!,style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),textAlign:TextAlign.center ,),
     const SizedBox(
           height: 6,
         ),
        Opacity(
         opacity: .7,
-        child: Text('Rudyard kipling ',
+        child: Text(book.volumeInfo.authors![0],
         style: Styles.textStyle18.copyWith(fontStyle: FontStyle.italic,fontWeight: FontWeight.w500),
         ),),
         const SizedBox(
           height: 18,
         ),
-       const  BookRating(
-        rating: 5,
-        count: 225,
+        BookRating(
+        rating: book.volumeInfo.averageRating??0,
+        count: book.volumeInfo.ratingsCount??0,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(
