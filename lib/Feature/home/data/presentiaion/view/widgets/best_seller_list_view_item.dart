@@ -17,7 +17,7 @@ class CustomListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return   GestureDetector(
       onTap: (){
-   GoRouter.of(context).push(AppRouters.kBookDetialsView);
+   GoRouter.of(context).push(AppRouters.kBookDetialsView,extra: bookModel);
       },
       child: SizedBox(
         height:100,
